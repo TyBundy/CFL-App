@@ -1,0 +1,42 @@
+/******** Expenses, Income & Give Table *********/
+
+table {
+    margin: auto;
+    z-index: 2;
+    width:60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(32, 32, 32, 0.3);
+    background: white;
+    text-align: center;
+}
+th, td {
+    padding: 12px 15px;
+}
+
+th {
+    background: darkgoldenrod;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px solid darkgoldenrod;
+}
+
+td {
+    border: 2px solid gray;
+}
+
+ tr:nth-child(odd) {
+    background-color: lightgray;
+ }
+
+ #deleteBtn {
+    border-radius: 55px;
+    background: gray;
+    color: white;
+    height: 25px;
+    width: 65px;
+    border: 2px solid gray;
+ }

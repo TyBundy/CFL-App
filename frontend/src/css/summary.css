@@ -1,0 +1,562 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/*Faded Background image*/
+.headersm {
+  min-height: 100vh;
+  width: 100%;
+  /* Linear Gradient adds shading to the background picture */
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../images/summary.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav .fa-solid {
+  display: none;
+}
+
+/* Text Styling */
+
+#summary_head {
+  color: white;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#breakdown_head {
+  color: black;
+  text-align: center;
+  padding: 15px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+
+/*************PROGRESS BAR SECTION ************/
+.progress-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-container {
+  display: flex;
+  width: 420px;
+  padding: 50px 0;
+  border-radius: 8px;
+  background: white;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-progress {
+  position: relative;
+  height: 270px;
+  width: 270px;
+  border-radius: 50%;
+  background: conic-gradient(darkgoldenrod 0deg, #ededed 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 220px;
+  width: 220px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.progress-value {
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  color: darkgoldenrod;
+}
+
+.income-text {
+  padding: 15px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #606060;
+}
+
+.progress-container input {
+  height: 45px;
+  width: 80%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.progress-container input:focus {
+  border-color: darkgoldenrod;
+}
+
+#after_tax{ /*There is a functionality here to animate a fade in display where you set the visibility to hidden & opacity to 0, (then set to visible and set opacity to 1 in js)*/
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+#after_tax>h1,
+#total_expenses>h1 {
+  font-size: 20px;
+}
+
+#after_tax_num,
+#total_expenses_num {
+  color: goldenrod;
+  font-weight: 800;
+}
+
+#total_expenses {
+  width: 100%;
+  padding-left: 70px;
+}
+
+#after_tax {
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 70px;
+}
+
+
+/**********Table Summary Section*************/
+
+.finance-bar {
+  max-width: 700px;
+  margin: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.finance-bar:last-child {
+  padding-bottom: 5%;
+}
+
+.finance-num {
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.finance-num>h1 {
+  text-align: left;
+  padding-left: 2%;
+  font-size: 35px;
+  display: inline;
+}
+
+.finance-num>h2 {
+  float: right;
+  font-size: 35px;
+  display: inline;
+  padding-right: 2%;
+  color: orange;
+}
+
+.finance-container {
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  display: none;
+  background-color: #fff;
+}
+
+#live_bar > h2 {
+  color: #b026ff;
+}
+
+#give_bar > h2 {
+  color: #00ccc9;
+}
+
+#grow_bar > h2 {
+  color: #3266b3;
+}
+
+#owe_bar > h2 {
+  color: #00cc00;
+}
+
+/**Shine effect for Table Buttons **/
+
+@keyframes TransitioningBackground {
+  0% {
+    background-position: 1% 0%;
+  }
+
+  50% {
+    background-position: 99% 100%;
+  }
+
+  100% {
+    background-position: 1% 0%;
+  }
+}
+
+.shiny {
+  /* for shine & gradient effects to work */
+  position: relative;
+  overflow: hidden;
+  /* for background color shift*/
+
+  background-size: 200% 200%;
+  /*animation: TransitioningBackground 5s ease infinite;*/
+  /* to ease the button growth on hover*/
+  transition: 0.6s;
+}
+
+/*psuedo-element shine animation left side*/
+.shiny::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 60px;
+  height: 100%;
+  top: 0;
+  filter: blur(30px);
+  transform: translateX(-100px) skewX(-15deg);
+}
+
+/*psuedo-element shine animation right side*/
+.shiny::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px;
+  height: 100%;
+  top: 0;
+  filter: blur(5px);
+  transform: translateX(-100px) skewX(-15deg);
+}
+
+/* grow button and change background gradient on hover */
+.shiny:hover {
+  /*background-image: linear-gradient(to left, #5aa8c4, #2698c2);  */
+  transform: scale(1.06);
+  cursor: pointer;
+}
+
+/*psuedo-elements for right- and left-side shine animations*/
+.shiny:hover::before,
+.shiny:hover::after {
+  transform: translateX(950px) skewX(-15deg);
+  transition: 1.3s;
+}
+
+/**************** Filters section **************/
+.filters {
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 90%;
+  font-size: 28px;
+  margin: auto;
+  text-align: left;
+}
+
+.filters details>summary {
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.filters details>summary>* {
+  display: inline;
+  cursor: pointer;
+}
+
+.filters details[open] {
+  animation: 500ms forwards;
+}
+
+.filters h2,
+h3 {
+  width: 90%;
+  font-size: 15px;
+  margin: auto;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: black;
+}
+
+.fa-calendar-days {
+  padding-left: 80px;
+  padding-top: 10px;
+  caret-color: transparent;
+}
+
+.months {
+  width: 92%;
+  margin: auto;
+}
+
+.years {
+  width: 92%;
+  margin: auto;
+}
+
+.button1,
+.button2 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 20px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+
+  margin-left: auto;
+  margin-left: 5px;
+  color: black;
+  background: transparent;
+}
+
+.button1:hover,
+.button2:hover {
+  background: rgba(4,
+      59,
+      92,
+      0.7) !important;
+  /* !important tag allows for hover effect to remain even if JS edits background color */
+  color: white !important;
+  transition: 0.4s;
+}
+
+/************************ Pie chart section ************************/
+
+.pie-chart {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.pie-chart h1 {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+#container {
+  width: 100%;
+  height: 500px;
+}
+
+.pie-chart img {
+  max-width: 30%;
+  min-width: 250px;
+  max-height: 30%;
+  min-height: 250px;
+  padding-top: 3%;
+  z-index: 1;
+}
+
+.pie-chart p {
+  color: black;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 22px;
+  z-index: 0;
+  position: absolute;
+  bottom: -139%;
+  right: 46.5%;
+}
+
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  /* adds transition, borders, and box sizing for the columns */
+  flex-basis: 31%;
+  background-color: #fff3f3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.15s;
+}
+
+.col h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*Alternate pie chart*/
+.pie-header1 {
+  text-align: center;
+  margin: auto;
+}
+
+.alt-chart {
+  display: flex;
+  justify-content: center;
+}
+
+#chartError {
+  margin: auto;
+  padding-top: 10px;
+}
+/* Allows columns to fit within an iphone view */
+@media screen and (max-width: 700px) {
+
+div, .chartError {
+    margin: auto;
+  }
+
+
+
+#summary_head h1 {
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.progress-container {
+  height: 600px;
+  width: 320px;
+}
+
+.income-text {
+  font-size: 20px;
+}
+
+#income_inputRef {
+  margin: auto;
+  height: 45px;
+}
+
+#after_tax_h1 {
+  text-align: center;
+  margin: auto;
+  padding-right: 70px;
+}
+
+#total_expenses_h1 {
+  text-align: center;
+  margin: auto;
+  padding-right: 70px;
+}
+
+#total_expenses{
+  text-align: left;
+}
+
+.circular-progress {
+  position: relative;
+  height: 270px;
+  width: 270px;
+  border-radius: 50%;
+  background: conic-gradient(darkgoldenrod 0deg, #ededed 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  height: 230px;
+  width: 230px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#live_bar h1 {
+  font-size: 30px;
+}
+
+#live_bar h2 {
+  font-size: 30px;
+}
+
+#give_bar h1 {
+  font-size: 30px;
+}
+
+#give_bar h2 {
+  font-size: 30px;
+}
+
+#grow_bar h1 {
+  font-size: 30px;
+}
+
+#grow_bar h2 {
+  font-size: 30px;
+}
+
+#owe_bar h1 {
+  font-size: 30px;
+}
+
+#owe_bar h2 {
+  font-size: 30px 
+}
+
+.pie-header1 {
+  font-size: 25px;
+}
+
+}
+

@@ -1,0 +1,255 @@
+.containerL {
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.containerL .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+
+.containerL .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: darkgoldenrod;
+}
+
+.containerL form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box select {
+    height: 52px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    margin-top: 6px;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: darkgoldenrod;
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .gender-details .category {
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+
+.gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+.gender-details .category .dot {
+    height: 18px;
+    width: 18px;
+    background: grey;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 5px solid transparent;
+}
+
+form .button {
+    height: 45px;
+    margin: 45px 0;
+}
+
+form .button input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: darkgoldenrod;
+    margin: auto;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .containerL {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category {
+        width: 100%;
+    }
+
+    .containerL form .user-details {
+        max-height: 300px;
+    }
+
+    .containerL form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.form-header {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.formcontainer {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.formcontainer input[type="text"],
+input[type="date"] {
+    text-align: left;
+    display: block;
+    margin: auto;
+    width: 90%;
+    border: 1px solid #090909;
+    padding: 5px;
+}
+
+select {
+    text-align: left;
+    display: block;
+    margin: auto;
+    width: 90%;
+    border: 1px solid #090909;
+    padding: 5px;
+}
+
+input[type="submit"] {
+    border: none;
+    margin: auto;
+    padding: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    background: #cfdeff;
+    color: black;
+    box-shadow: 0 1px 0 white;
+    -moz-box-shadow: 0 1px 0 white;
+    -webkit-box-shadow: 0 1px 0 white;
+    cursor: pointer;
+}
+
+
+.formcontainer .btn {
+    padding: 12px 20px;
+    border: auto;
+    background-color: darkgoldenrod;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin: auto;
+    opacity: 0.8;
+    cursor: pointer;
+    position: CENTER;
+}
+
+.formcontainer .btn:hover,
+.openButton:hover {
+    opacity: 1;
+}
+
+.categoryInput {
+    border: auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 95%;
+    margin-bottom: 0px;
+    opacity: 0.8;
+    padding: 3px;
+}
+
+.purchaseInput {
+    padding: 3px;
+    border: auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.dateInput {
+    padding: 3px;
+    border: auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 00px;
+    opacity: 0.8;
+}
+
+.amountInput {
+    padding: 3px;
+    border: auto;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    margin: bottom 30px;
+    opacity: 0.8;
+}

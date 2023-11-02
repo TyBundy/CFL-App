@@ -1,0 +1,191 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.headerlv {
+  min-height: 100vh;
+  width: 100%;
+  /* Linear Gradient adds shading to the background picture */
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(../images/livepage.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+
+nav .fa-solid {
+  display: none;
+}
+
+/* Pages after background picture */
+.expenses {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  height: auto;
+}
+
+table {
+
+  min-width: 370px;
+  table-layout: fixed;
+}
+
+tr {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+table td {
+  max-height: 50px;
+}
+
+th:first-child,
+td:first-child {
+  width: 70%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 50%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 50%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 60%;
+}
+
+th:last-child,
+td:last-child {
+  width: 60%;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+p {
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.expense-col {
+  flex-basis: 31%;
+  background: #fff3f3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.expense-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+#popupForm {
+  width: 90%;
+  height: auto;
+  border: 1px solid white;
+  margin: auto;
+  padding: 1em;
+  text-align: center;
+  position: center;
+}
+
+.loginPopup {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  height: auto;
+  background-color: white;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+.formPopup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
+  margin: auto;
+}
+
+
+@media screen and (max-width: 700px) {
+  #form-header {
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  .text-box h1 {
+    font-size: 30px;
+  }
+
+  .text-box hr {
+    width: 60%;
+  }
+
+  .tbl{
+    width: 100%;
+  }
+
+  .table th {
+    font-size: 14px;
+  }
+
+  #tbl td {
+    font-size: 10px;
+  }
+
+  #tbl thead th {
+    text-align: center;
+  }
+
+  table td {
+    max-height: 40px;
+  }
+
+  #deleteBtn {
+    position: relative;
+    padding-left: 10px;   
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+  }
+
+  #desp {
+    position: relative;
+    padding-left: 10px;
+  }
+}

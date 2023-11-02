@@ -1,0 +1,25 @@
+/*****Last Section*****/
+.footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa-brands {
+    color: black;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.fa-heart {
+    color: darkgoldenrod;
+}
+
+/*****End of Last Section*****/
