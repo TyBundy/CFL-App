@@ -31,6 +31,6 @@ app.use('/api', require('./routes'));
 
 
 // Start server
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+app.listen(process.env.DB_PORT, () => {
+    console.log(`Server is running on port ${process.env.DB_PORT}`);
 })
