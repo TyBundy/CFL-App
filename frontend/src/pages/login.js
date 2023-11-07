@@ -123,7 +123,7 @@ const handleChange = ({ currentTarget: input }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const url = "https://main--magnificent-biscotti-63396d.netlify.app/api/findUsers";
+        const url = "https://main--magnificent-biscotti-63396d.netlify.app/findUsers";
         // Send POST request to server to authenticate user
         const response = await axios.post(url, data);
         const { data: responseData } = response;
