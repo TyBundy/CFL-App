@@ -19,41 +19,41 @@ function Login() {
             try {
                 //send post request to the 'api/users' endpoint
 
-                const liveRow = await axios.post('http://localhost:5000/api/getLiveRow', { 
+                const liveRow = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getLiveRow', { 
                     userID: uid,
                 });
-                const giveRow = await axios.post('http://localhost:5000/api/getGiveRow', { 
+                const giveRow = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getGiveRow', { 
                     userID: uid,
                 });
-                const growRow = await axios.post('http://localhost:5000/api/getGrowRow', { 
+                const growRow = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getGrowRow', { 
                     userID: uid,
                 });
-                const oweRow = await axios.post('http://localhost:5000/api/getOweRow', { 
+                const oweRow = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getOweRow', { 
                     userID: uid,
                 });
-                const expenseRow = await axios.post('http://localhost:5000/api/getExpenseRow', {
+                const expenseRow = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getExpenseRow', {
                     userID: uid
                 })
 
-                const incomeTotal = await axios.post('http://localhost:5000/api/getSummary', { 
+                const incomeTotal = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getSummary', { 
                     userID: uid,
                     type: 'incomeTotal',
                 });
-                const liveTotal = await axios.post('http://localhost:5000/api/getSummary', { 
+                const liveTotal = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getSummary', { 
                     userID: uid,
                     type: 'liveTotal',
                 });
 
-                const giveTotal = await axios.post('http://localhost:5000/api/getSummary', { 
+                const giveTotal = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getSummary', { 
                     userID: uid,
                     type: 'giveTotal',
                 });
 
-                const growTotal = await axios.post('http://localhost:5000/api/getSummary', { 
+                const growTotal = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getSummary', { 
                     userID: uid,
                     type: 'growTotal',
                 });
-                const oweTotal = await axios.post('http://localhost:5000/api/getSummary', { 
+                const oweTotal = await axios.post('https://main--magnificent-biscotti-63396d.netlify.app/api/getSummary', { 
                     userID: uid,
                     type: 'oweTotal',
                 });
@@ -123,7 +123,7 @@ const handleChange = ({ currentTarget: input }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const url = "http://localhost:5000/api/findUsers";
+        const url = "https://main--magnificent-biscotti-63396d.netlify.app/api/findUsers";
         // Send POST request to server to authenticate user
         const response = await axios.post(url, data);
         const { data: responseData } = response;

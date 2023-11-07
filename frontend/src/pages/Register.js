@@ -29,7 +29,7 @@ function Register() {
         } else {
             try{
                 
-                const url = "http://localhost:5000/api/users";
+                const url = "https://main--magnificent-biscotti-63396d.netlify.app/api/users";
                 //send post request to the 'api/users' endpoint
                 const { data: { user } } = await axios.post(url, data);
                 
