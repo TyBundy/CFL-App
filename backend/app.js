@@ -10,8 +10,15 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({origin: "https://main--magnificent-biscotti-63396d.netlify.app"}));
 app.use(express.json());
+
+app.use(cors());
+app.options("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.sendStatus(204);
+  });
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI, { //process.env relates to variables declared in the .env file
@@ -25,9 +32,6 @@ mongoose.connection.once('open', () => {
 
 // Routes
 app.use('/api', require('./routes'));
-app.response.setHeader("Access-Control-Allow-Origin", "*")
-app.response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
-app.response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
 // Start server
 app.listen(process.env.DB_PORT, () => {
