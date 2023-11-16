@@ -25,8 +25,9 @@ mongoose.connection.once('open', () => {
 
 // Routes
 app.use('/api', require('./routes'));
-app.response.setHeader("Access-Control-Allow-Origin: *")
-app.response.setHeader("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE")
+app.response.setHeader("Access-Control-Allow-Origin", "*")
+app.response.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE")
+app.response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
 // Start server
 app.listen(process.env.DB_PORT, () => {
