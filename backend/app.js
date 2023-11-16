@@ -28,7 +28,7 @@ mongoose.connection.once('open', () => {
 
 // Routes
 app.use('/api', require('./routes'));
-app.response.setHeader("Access-Control-Allow-Origin", '*')
+app.response.setHeader("Access-Control-Allow-Origin", true)
 
 // Start server
 app.listen(process.env.DB_PORT, () => {
