@@ -123,7 +123,7 @@ const handleChange = ({ currentTarget: input }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const url = "https://localhost/findUsers";
+        const url = "https://localhost/api/findUsers";
         // Send POST request to server to authenticate user
         const response = await axios.post(url, data);
         const { data: responseData } = response;
