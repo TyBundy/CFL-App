@@ -19,41 +19,41 @@ function Login() {
             try {
                 //send post request to the 'api/users' endpoint
 
-                const liveRow = await axios.post('https:localhost/api/getLiveRow', { 
+                const liveRow = await axios.post('https://localhost/api/getLiveRow', { 
                     userID: uid,
                 });
-                const giveRow = await axios.post('https:localhost/api/getGiveRow', { 
+                const giveRow = await axios.post('https://localhost/api/getGiveRow', { 
                     userID: uid,
                 });
-                const growRow = await axios.post('https:localhost/api/getGrowRow', { 
+                const growRow = await axios.post('https://localhost/api/getGrowRow', { 
                     userID: uid,
                 });
-                const oweRow = await axios.post('https:localhost/api/getOweRow', { 
+                const oweRow = await axios.post('https://localhost/api/getOweRow', { 
                     userID: uid,
                 });
-                const expenseRow = await axios.post('https:localhost/api/getExpenseRow', {
+                const expenseRow = await axios.post('https://localhost/api/getExpenseRow', {
                     userID: uid
                 })
 
-                const incomeTotal = await axios.post('https:localhost/api/getSummary', { 
+                const incomeTotal = await axios.post('https://localhost/api/getSummary', { 
                     userID: uid,
                     type: 'incomeTotal',
                 });
-                const liveTotal = await axios.post('https:localhost/api/getSummary', { 
+                const liveTotal = await axios.post('https://localhost/api/getSummary', { 
                     userID: uid,
                     type: 'liveTotal',
                 });
 
-                const giveTotal = await axios.post('https:localhost/api/getSummary', { 
+                const giveTotal = await axios.post('https://localhost/api/getSummary', { 
                     userID: uid,
                     type: 'giveTotal',
                 });
 
-                const growTotal = await axios.post('https:localhost/api/getSummary', { 
+                const growTotal = await axios.post('https://localhost/api/getSummary', { 
                     userID: uid,
                     type: 'growTotal',
                 });
-                const oweTotal = await axios.post('https:localhost/api/getSummary', { 
+                const oweTotal = await axios.post('https://localhost/api/getSummary', { 
                     userID: uid,
                     type: 'oweTotal',
                 });
@@ -123,7 +123,7 @@ const handleChange = ({ currentTarget: input }) => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const url = "https:localhost/findUsers";
+        const url = "https://localhost/findUsers";
         // Send POST request to server to authenticate user
         const response = await axios.post(url, data);
         const { data: responseData } = response;
