@@ -125,7 +125,7 @@ const handleSubmit = async (e) => {
     try {
         const url = "https://main--magnificent-biscotti-63396d.netlify.app/findUsers";
         // Send POST request to server to authenticate user
-        const response = await axios.post(url, data);
+        const response = await axios.post(url, data, headers={"Access-Control-Allow-Origin": "*"});
         const { data: responseData } = response;
         console.log("Response data:", responseData);
         
