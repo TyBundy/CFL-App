@@ -10,13 +10,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 // Database connection
-
-
-
 mongoose.connect(process.env.MONGODB_URI, { //process.env relates to variables declared in the .env file
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -28,8 +25,8 @@ mongoose.connection.once('open', () => {
 
 // Routes
 app.use('/api', require('./routes'));
-// app.response.setHeader("Access-Control-Allow-Origin: *")
-// app.response.setHeader("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE")
+app.response.setHeader("Access-Control-Allow-Origin: *")
+app.response.setHeader("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE")
 
 // Start server
 app.listen(process.env.DB_PORT, () => {
